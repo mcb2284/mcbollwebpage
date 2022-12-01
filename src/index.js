@@ -1,24 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import ResponsiveAppBar from "./components/NavigationBar";
 import "./index.css";
+import Box from "@mui/material/Box";
+import { CssBaseline } from "@mui/material";
+import Container from "@mui/material/Container";
 
 function App() {
-  return <ResponsiveAppBar />;
+  return (
+    <>
+      <ResponsiveAppBar />
+      <SimpleContainer />
+    </>
+  );
 }
 
-function Navbar() {
+function SimpleContainer() {
   return (
-    <div>
-      <Toolbar variant="regular">
-        <Button>About</Button>
-        <Button>Projects</Button>
-        <Button>Blog</Button>
-        <Button>Contact</Button>
-      </Toolbar>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Box sx={{ bgcolor: "#ebebeb", height: "100vh" }} />
+      </Container>
+    </React.Fragment>
   );
 }
 
@@ -35,88 +40,6 @@ function Form() {
       </Button>
     </form>
   );
-}
-
-class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isToggleOn: true };
-
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState((prevState) => ({
-      isToggleOn: !prevState.isToggleOn,
-    }));
-  }
-
-  render() {
-    return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? "ON" : "OFF"}
-      </button>
-    );
-  }
-}
-
-function UserGreeting(props) {
-  return <h1>Welcome back!</h1>;
-}
-
-function GuestGreeting(props) {
-  return <h1>Please sign up.</h1>;
-}
-
-function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
-}
-
-function LoginButton(props) {
-  return <button onClick={props.onClick}>Login</button>;
-}
-
-function LogoutButton(props) {
-  return <button onClick={props.onClick}>Logout</button>;
-}
-
-class LoginControl extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = { isLoggedIn: false };
-  }
-
-  handleLoginClick() {
-    this.setState({ isLoggedIn: true });
-  }
-
-  handleLogoutClick() {
-    this.setState({ isLoggedIn: false });
-  }
-
-  render() {
-    const isLoggedIn = this.state.isLoggedIn;
-    let button;
-    if (isLoggedIn) {
-      button = <LogoutButton onClick={this.handleLogoutClick} />;
-    } else {
-      button = <LoginButton onClick={this.handleLoginClick} />;
-    }
-
-    return (
-      <div>
-        <Greeting isLoggedIn={isLoggedIn} />
-        {button}
-      </div>
-    );
-  }
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
