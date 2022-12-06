@@ -1,44 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Button from "@mui/material/Button";
 import ResponsiveAppBar from "./components/NavigationBar";
 import "./index.css";
-import Box from "@mui/material/Box";
-import { CssBaseline } from "@mui/material";
 import Container from "@mui/material/Container";
 
 function App() {
   return (
-    <>
+    <Container>
       <ResponsiveAppBar />
-      <SimpleContainer />
-    </>
-  );
-}
-
-function SimpleContainer() {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <Box sx={{ bgcolor: "#ebebeb", height: "100vh" }} />
-      </Container>
-    </React.Fragment>
-  );
-}
-
-function Form() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("You clicked submit.");
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <Button variant="contained" type="submit">
-        Submit
-      </Button>
-    </form>
+    </Container>
   );
 }
 

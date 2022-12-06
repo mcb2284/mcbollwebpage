@@ -11,10 +11,16 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import BackDrop from "./Backdrop";
+import Link from "@mui/material/Link";
 
 const pages = ["About", "Projects", "Blog", "Contact"];
 const socials = ["Twitter", "Github", "LinkedIn"];
+const socialLinks = [
+  "https://www.twitter.com/PumpingLlama",
+  "https://www.github.com/mcb2284",
+  "https://www.linkedin.com/in/michael-c-bollinger/",
+];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,7 +42,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" color="default">
       <Container maxWidth="xl" sx={{ bgcolor: "#4f5d75" }}>
         <Toolbar disableGutters>
           <Typography
@@ -49,7 +55,7 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex" },
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#DDDDDD",
               textDecoration: "none",
             }}
           >
@@ -85,27 +91,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            {" "}
-            LOGO{" "}
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -117,7 +102,6 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -141,14 +125,25 @@ function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {socials.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+                <Link
+                  href={socialLinks[socials.indexOf(setting)]}
+                  key={setting}
+                  underline="none"
+                  variant="body1"
+                  rel="noopener"
+                  target="_blank"
+                  sx={{ color: "#444444" }}
+                >
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
         </Toolbar>
       </Container>
+      <BackDrop />
     </AppBar>
   );
 }
