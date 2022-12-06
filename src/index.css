@@ -12,14 +12,19 @@ code {
     monospace;
 }
 
-img {
-  width: 50px;
-  height: 60px;
+.background-image{
+  background-image: url("./Icons/background.png");
+  background-size: cover;
+  width: 100vw;
 }
 
+.about{
+  position: relative;
+}
 
 .landing-img {
   position: absolute;
-  right: 4vw;
+  right: 0;
+  bottom: 7vw;
   width: 40vw;
 }
