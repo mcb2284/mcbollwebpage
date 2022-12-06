@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import BackDrop from "./Backdrop";
+import Landing from "./Landing";
 import Link from "@mui/material/Link";
 
 const pages = ["About", "Projects", "Blog", "Contact"];
@@ -143,7 +143,7 @@ function ResponsiveAppBar() {
           </Box>
         </Toolbar>
       </Container>
-      <BackDrop />
+      <Landing />
     </AppBar>
   );
 }

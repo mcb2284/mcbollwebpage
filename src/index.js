@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import ResponsiveAppBar from "./components/NavigationBar";
+import ResponsiveAppBar from "./Components/NavigationBar";
 import "./index.css";
 import Container from "@mui/material/Container";
 
