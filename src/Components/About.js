@@ -9,7 +9,7 @@ function About() {
     <Box
       className="about"
       sx={{
-        bgcolor: "#ebebeb",
+        bgcolor: "(240, 239, 235, 0.8)",
         margin: "20px",
         padding: "30px",
       }}
