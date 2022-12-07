@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import Landing from "./Landing";
 import Link from "@mui/material/Link";
 
 const pages = ["About", "Projects", "Blog", "Contact"];
@@ -42,8 +41,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed" color="default">
-      <Container maxWidth="xl" sx={{ bgcolor: "#4f5d75" }}>
+    <AppBar position="fixed" color="transparent">
+      <Container maxWidth="xl" sx={{ bgcolor: "rgba(31, 36, 46, 0.4)" }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -85,7 +84,11 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  href={"#" + page}
+                  onClick={handleCloseNavMenu}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -95,6 +98,7 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
+                href={"#" + page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
@@ -143,7 +147,6 @@ function ResponsiveAppBar() {
           </Box>
         </Toolbar>
       </Container>
-      <Landing />
     </AppBar>
   );
 }

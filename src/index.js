@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import ResponsiveAppBar from "./Components/NavigationBar";
 import "./index.css";
-import Container from "@mui/material/Container";
+import Landing from "./Components/Landing";
 
 function App() {
   return (
-    <Container>
+    <>
       <ResponsiveAppBar />
-    </Container>
+      <Landing />
+    </>
   );
 }
 
