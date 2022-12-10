@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import ResponsiveAppBar from "./Components/NavigationBar";
 import "./index.css";
 import Landing from "./Components/Landing";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 function App() {
+  const [open, setOpen] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setOpen(false), 3000);
+  }, []);
   return (
     <>
       <ResponsiveAppBar />
       <Landing />
+      <Backdrop className="landing-progress" open={open}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </>
   );
 }
