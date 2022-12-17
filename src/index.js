@@ -4,6 +4,7 @@ import "./index.css";
 import Landing from "./Components/Landing";
 import { Backdrop, CircularProgress } from "@mui/material";
 import NavBar from "./Components/NavBar";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   const [open, setOpen] = useState(true);

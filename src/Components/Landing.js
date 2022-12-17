@@ -3,6 +3,7 @@ import Container from "@mui/material/Container";
 import Intro from "./Intro";
 import About from "./About";
 import Contact from "./Contact";
+import ScrollToTop from "./ScrollToTop";
 
 function Landing() {
   return (
