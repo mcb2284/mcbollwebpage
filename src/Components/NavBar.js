@@ -15,7 +15,7 @@ import Link from "@mui/material/Link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { Icon } from "@mui/material";
+import { SvgIcon } from "@mui/material";
 
 const pages = ["About", "Projects", "Blog", "Contact"];
 const socials = ["Twitter", "Github", "LinkedIn"];
@@ -26,7 +26,7 @@ const socialLinks = [
   "https://www.linkedin.com/in/michael-c-bollinger/",
 ];
 
-function ResponsiveAppBar() {
+function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -144,10 +144,8 @@ function ResponsiveAppBar() {
                   sx={{ color: "#444444" }}
                 >
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Icon
-                      component="img"
-                      alt="MB"
-                      src={socialIcons[socials.indexOf(setting)]}
+                    <SvgIcon
+                      component={socialIcons[socials.indexOf(setting)]}
                     />
                   </MenuItem>
                 </Link>
@@ -160,4 +158,4 @@ function ResponsiveAppBar() {
   );
 }
 
-export default ResponsiveAppBar;
+export default NavBar;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import ResponsiveAppBar from "./Components/NavigationBar";
 import "./index.css";
 import Landing from "./Components/Landing";
 import { Backdrop, CircularProgress } from "@mui/material";
+import NavBar from "./Components/NavBar";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -12,7 +12,7 @@ function App() {
   }, []);
   return (
     <>
-      <ResponsiveAppBar />
+      <NavBar />
       <Landing />
       <Backdrop className="landing-progress" open={open}>
         <CircularProgress color="inherit" />

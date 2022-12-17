@@ -1,0 +1,29 @@
+{
+  "about":{
+
+    "school": {
+      "name": "Columbia University",
+      "start-date": "September, 2019",
+      "end-date": "May, 2023",
+      "major": "Computer Science",
+      "gpa": "3.1"
+    },
+    "work": {
+      "army": {
+        "name": "75th Ranger Regiment",
+        "start-date": "Feburary, 2012",
+        "end-date": "June 2019",
+        "rank": "Sergeant, E5",
+        "awards": "Purple Heart, JCOM, ARCOM, AAM, Combat Infantrymans Badge, Expert Infantrymans Badge."
+      },
+      "amazon": {
+        "name": "Amazon",
+        "position": "Software Development Engineer, L4",
+        "start-date": "June, 2022",
+        "end-date": "August 2022",
+        "project": "Successfully completed an internship at Amazon, where I worked as a Cloud Developer at Ring and utilized Go and Docker to improve the integration testing suite. Implemented new features to the integration testing suite, including code coverage and the ability to compute total coverage using unit and integration tests. Applied these updates to 21 different microservices, resulting in enhanced testing and code coverage across the organization."
+
+      }
+    }
+  }
+}
