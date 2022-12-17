@@ -16,6 +16,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { SvgIcon } from "@mui/material";
+import GroupIcon from "@mui/icons-material/Group";
 
 const pages = ["About", "Projects", "Blog", "Contact"];
 const socials = ["Twitter", "Github", "LinkedIn"];
@@ -47,7 +48,7 @@ function NavBar() {
 
   return (
     <AppBar position="fixed" color="transparent" elevation={0}>
-      <Container maxWidth="xl" sx={{ bgcolor: "rgba(31, 36, 46, 0.6)" }}>
+      <Container maxWidth="xl" sx={{ bgcolor: "rgba(31, 36, 46, 0.4)" }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -75,7 +76,7 @@ function NavBar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: "white" }} />
             </IconButton>
 
             <Menu
@@ -86,7 +87,9 @@ function NavBar() {
               transformOrigin={{ vertical: "top", horizontal: "left" }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
             >
               {pages.map((page) => (
                 <MenuItem
@@ -111,27 +114,27 @@ function NavBar() {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="MB" src="images/profile_img.jpg" />
-              </IconButton>
-            </Tooltip>
+          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenUserMenu}
+              color="inherit"
+            >
+              <GroupIcon sx={{ color: "white" }} />
+            </IconButton>
+
             <Menu
-              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
+              transformOrigin={{ vertical: "top", horizontal: "left" }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              sx={{ display: { xs: "block", md: "none" } }}
             >
               {socials.map((setting) => (
                 <Link
@@ -151,6 +154,23 @@ function NavBar() {
                 </Link>
               ))}
             </Menu>
+          </Box>
+          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
+            {socials.map((setting) => (
+              <Link
+                href={socialLinks[socials.indexOf(setting)]}
+                key={setting}
+                underline="none"
+                variant="body1"
+                rel="noopener"
+                target="_blank"
+                sx={{ color: "white" }}
+              >
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <SvgIcon component={socialIcons[socials.indexOf(setting)]} />
+                </MenuItem>
+              </Link>
+            ))}
           </Box>
         </Toolbar>
       </Container>
