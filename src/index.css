@@ -37,3 +37,12 @@ code {
   bottom: 7vw;
   width: 40vw;
 }
+
+#Contact {
+  margin: 0 5vw 5vh 5vw;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
